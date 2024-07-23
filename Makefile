@@ -23,5 +23,5 @@ purge: # Remove all sites
 	fi
 
 remove-git: # Remove the git repository
-	rm -R .git
+	rm -fR .git
 
