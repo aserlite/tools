@@ -6,13 +6,13 @@ help: ## Display help
 	@echo "Available commands:"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-create: # Create a project
+create: ## Create a project
 	@./.tools/create_project.sh
 
-update: # Update the files
+update: ## Update the files
 	git pull
 
-purge: # Remove all sites
+purge: ## Remove all sites
 	@echo "Tous les sites vont être supprimés, êtes-vous sûr? [Y/N]"; \
 	read response; \
 	if [ "$$response" = "Y" ]; then \
@@ -22,6 +22,6 @@ purge: # Remove all sites
 		mkdir sites; \
 	fi
 
-remove-git: # Remove the git repository
+remove-git: ## Remove the git repository
 	rm -fR .git
 
