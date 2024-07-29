@@ -20,7 +20,6 @@ create_wordpress_project() {
 
 create_laravel_project() {
     echo "Création d'un projet Laravel: $projectName"
-    git clone 
     composer create-project --prefer-dist laravel/laravel .
     sed -i -e "s/APP_NAME=Laravel/APP_NAME=$projectName/g" .env
     sed -i -e "s/DB_CONNECTION=sqlite/DB_CONNECTION=mysql/g" .env
